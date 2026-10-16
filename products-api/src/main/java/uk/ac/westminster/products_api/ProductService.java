@@ -3,6 +3,7 @@ package uk.ac.westminster.products_api;
 
 import org.springframework.stereotype.Service;
 
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -28,4 +29,9 @@ public class ProductService {
                 .filter(product -> product.getId().equals(id))
                 .findFirst();
     }
+
+    public void deleteProduct(Long id) {
+        products.removeIf(p -> p.getId().equals(id));
+    }
+
 }
